@@ -1,0 +1,17 @@
+[package]
+name = "f1_documents"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["mongo"]
+serde = ["dep:serde"]
+mongo = ["serde", "dep:mongodb"]
+
+[dependencies]
+chrono = "0.4.24"
+mongodb = { version = "2.4.0", optional = true}
+serde = { version = "1.0.158", features = ["derive"], optional = true }
+
